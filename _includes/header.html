@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand-mark" aria-hidden="true">&gt;_</span>
+      <span class="brand-text">
+        <span class="brand-title">{{ site.title }}</span>
+        <span class="brand-sub">research notes</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Posts</a>
+      {% for path in site.header_pages %}
+        {% assign p = site.pages | where: "path", path | first %}
+        {% if p %}
+          <a href="{{ p.url | relative_url }}"{% if page.url == p.url %} aria-current="page"{% endif %}>{{ p.title }}</a>
+        {% endif %}
+      {% endfor %}
+      <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+    </nav>
+  </div>
+</header>

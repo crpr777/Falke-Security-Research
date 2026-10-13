@@ -1,0 +1,67 @@
+title: Falke Security Research
+description: >-
+  Red team and cybersecurity write-ups on Covert Methods of Entry,
+  Red Team Operations, and AI Security Research.
+url: https://crpr777.github.io
+baseurl: /Falke-Security-Research
+lang: en
+author: Falke Security Research
+github_url: https://github.com/crpr777/Falke-Security-Research
+
+permalink: /:year/:month/:day/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+
+highlighter: rouge
+excerpt_separator: "<!--more-->"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+  title: Falke Security Research
+  description: Red team and cybersecurity write-ups.
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+header_pages:
+  - archive.md
+  - about.md
+
+topics:
+  - Covert Methods of Entry
+  - Red Team Operations
+  - AI Security Research
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules
+  - _templates
+  - .github
+  - .bundle
+  - .gitignore
