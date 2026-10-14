@@ -313,11 +313,34 @@ h3 {
 .prose img {
   max-width: 100%;
   height: auto;
+}
+
+.post-body figure,
+.post-body img {
   display: block;
-  margin: 1.4rem 0;
+  max-width: min(22rem, 86%);
+  max-height: 18rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 1.35rem auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-elev);
+}
+
+.post-body figure {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.post-body figure img {
+  margin: 0 auto;
+}
+
+.post-body p:has(img) {
+  margin: 0;
 }
 
 .placeholder-note {
@@ -519,4 +542,9 @@ th {
   .nav { gap: 0.85rem; }
   .brand-logo { height: 2.7rem; }
   .brand-title { font-size: 0.75rem; }
+  .post-body figure,
+  .post-body img {
+    max-width: min(15.5rem, 78%);
+    max-height: 15rem;
+  }
 }
